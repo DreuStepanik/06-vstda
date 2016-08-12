@@ -6,15 +6,26 @@
 
 #button {
 	width: 240px;
+	color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+
 }
+
+#button:hover {
+    background-color: #275d8b;
+    }
 
 #buttonSubmit {
 	margin: 10px auto 10px;
+	padding:5px 15px; 
+	background:#ccc; 
 }
 
 .jumbotron{
 color: #FFFFFF;
-background-color:#818181;
+background-color:#808080;
+text-shadow: 1px 1px 2px black, 0 0 25px #262626, 0 0 5px #1a1a1a;
 }
 
 .footer {
@@ -24,6 +35,31 @@ background-color:#818181;
   left: 0;
   padding: 1rem;
   text-align: center;
-  background-color: #818181;
+  background-color: #808080;
   color: #fff;
+  text-shadow: 1px 1px 2px black, 0 0 25px #262626, 0 0 5px #1a1a1a;
+}
+
+#buttonGroup {
+	margin: 10px auto;
+	box-shadow: 10px 10px 5px #888888;
+
+}
+
+body {
+	font-family: 'Oswald', sans-serif;
+	/*background-color: #f2f2f2;*/
+}
+
+
+#taskPriority {
+	box-shadow: 10px 10px 5px #888888;
+	background-color: #bfbfbf;
+}
+
+.btn-primary {
+text-shadow: 1px 1px 2px black, 0 0 25px #1f7a7a, 0 0 5px #155151;
+
+box-shadow: 2px 2px 5px #737373;
+
 }

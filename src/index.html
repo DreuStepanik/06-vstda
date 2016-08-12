@@ -7,6 +7,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <!-- inject:css -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- endinject -->
@@ -20,7 +21,7 @@
 <body ng-app="todoListApp">
     <div id="addTask" class="container" ng-controller="mainCtrl">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4" id="taskPriority">
                 <form role="form" class="text-center">
                     <div>
                         <label id="labelOne">Enter Task:</label>
@@ -36,14 +37,17 @@
                         </select>
                     </div>
                     <div class="form-actions" id="buttonSubmit">
-                        <button ng-click="addTodo()" type="submit" class="btn btn btn-primary" id="button">Add to List!</button>
+                       <!-- <button ng-click="addTodo()" type="submit" class="btn btn btn-primary" id="button">Add to List!</button> -->
+                        <button ng-click="addTodo()" type="submit" class="btn btn-default btn-lg" id="button">Add to List!   
+  												<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+												</button>
                     </div>
                 </form>
             </div>
             <div class="col-sm-7 col-sm-offset-1 text-center lead">
-            	<div class="text-center btn-group">
-            		<button id="byHighest" type="button" class="btn btn-primary" ng-click="orderMyTodos='+priority';">Order by Highest Priority:</button>
-                <button id="lowest" type="button" class="btn btn-primary" ng-click="orderMyTodos='-priority';">Order by Lowest Priority:</button>
+            	<div class="text-center btn-group" id="buttonGroup">
+            		<button id="byHighest" type="button" class="btn btn-primary" ng-click="orderMyTodos='-priority';">Order by Highest Priority:</button>
+                <button id="lowest" type="button" class="btn btn-primary" ng-click="orderMyTodos='+priority';">Order by Lowest Priority:</button>
                 <button id="alphabetically" type="button" class="btn btn-primary" ng-click="orderMyTodos='task';">Order by Alphabetically:</button>
                  	
             	</div>
@@ -52,7 +56,7 @@
                        
                     </thead>
                     <tbody class="container">
-                        <tr ng-repeat="todo in todos | orderBy:orderMyTodos" class="text-center">
+                        <tr ng-repeat="todo in todos | orderBy:orderMyTodos" class="table_cell text-center">
                             <td ng-class="{'list-group-item-info': todo.priority === '1',
                             							'list-group-item-warning' : todo.priority === '2',
                             							'list-group-item-danger' : todo.priority === '3'}">{{todo.task}}</td>
